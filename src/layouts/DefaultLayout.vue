@@ -41,28 +41,38 @@ nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }
 
 ul {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: flex;
   gap: 15px;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+li {
+  padding: 0 10px;
 }
 li a {
   color: #394149;
   transition: 0.3s ease;
 }
 li a:hover {
-  color: #196f3d;
+  color: #273746;
+}
+li a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 5px;
+  background: #273746;
+  transition: 0.3s ease;
+}
+li a:hover::after {
+  width: 100%;
+  background: #273746;
 }
 .logo {
   font-size: 2rem;
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 15px 0;
-  box-sizing: border-box;
 }
 </style>

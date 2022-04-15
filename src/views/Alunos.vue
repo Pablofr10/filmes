@@ -1,19 +1,18 @@
 <template>
   <div>
     <h1>Alunos</h1>
-    <div class="cadastro"></div>
+    <FormAluno />
   </div>
 </template>
 
 <script>
+import FormAluno from "../components/FormAluno.vue";
 export default {
   setup() {
     return {};
   },
+  components: { FormAluno },
 };
 </script>
 
-<style scoped>
-.cadastro {
-}
-</style>
+<style scoped></style>

@@ -27,6 +27,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 a {
   text-decoration: none;
@@ -34,5 +35,66 @@ a {
 }
 li {
   list-style: none;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 0;
+  box-sizing: border-box;
+}
+input,
+textarea,
+select {
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background-color: #fff;
+  border: 2px solid #8b8b8b;
+  border-radius: 4px;
+  width: 100%;
+}
+
+input:focus {
+  background-color: #eaecee;
+  border: 2px solid #283747;
+  transition: 0.2s ease;
+}
+.input:not(textarea) {
+  line-height: 1;
+  height: 2.25em;
+}
+.form {
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.form-group {
+  display: block;
+  padding: 5px 0;
+}
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.btn {
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 21px -2px rgba(0, 0, 0, 0.32);
+  box-shadow: 5px 5px 21px -2px rgba(0, 0, 0, 0.32);
+}
+.btn-success {
+  background: #309f5e;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.btn-success:hover {
+  background: #3cc273;
+  color: #ebf3ee;
 }
 </style>
