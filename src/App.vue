@@ -42,7 +42,7 @@ li {
   padding: 15px 0;
   box-sizing: border-box;
 }
-input,
+input[type="text"],
 textarea,
 select {
   font-size: 1rem;
@@ -52,6 +52,16 @@ select {
   border: 2px solid #8b8b8b;
   border-radius: 4px;
   width: 100%;
+}
+
+input[type="radio"] {
+  height: 18px;
+  width: 18px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+input[type="radio"]:checked {
+  background: #283747;
 }
 
 input:focus {
@@ -76,6 +86,17 @@ input:focus {
   display: block;
   font-size: 1rem;
   font-weight: 600;
+}
+.form-group-select {
+  display: flex;
+  gap: 15px;
+}
+.form-group-select .form-group-radio,
+input {
+  margin-right: 5px;
+}
+.form-group-check label {
+  width: 100%;
 }
 .btn {
   padding: 10px 15px;

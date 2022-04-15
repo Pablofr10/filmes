@@ -27,17 +27,16 @@
           type="text"
           @value="dataNascimento = $event"
         />
-        <div class="form-group">
-          <label for="cpf">Tipo Sangue Pai</label>
-          <select>
-            <option
-              v-for="sangue in sangues"
-              :value="tipoSangue"
-              :key="sangue.id"
-            >
-              {{ sangue.nome }}
-            </option>
-          </select>
+        <h3>Tipo Sangue</h3>
+        <div class="form-group-select">
+          <div
+            class="form-group-radio"
+            v-for="sangue in sangues"
+            :key="sangue.id"
+          >
+            <input :value="sangue.tipo" type="radio" v-model="tipoSangue" />
+            <label for="tipoSangue">Tipo Sangue Pai</label>
+          </div>
         </div>
         <div class="form-group">
           <label for="comentario">Comentários</label>
@@ -51,6 +50,7 @@
         <button type="submit" class="btn btn-success">Enviar Cadastro</button>
       </form>
     </div>
+    {{ tipoSangue }}
   </div>
 </template>
 
@@ -75,7 +75,13 @@ export default {
     const form = toRefs(formulario);
 
     const enviarCadastro = () => {
-      console.log(form.nome.value);
+      const aluno = {
+        nome: nome.value,
+        cpf: cpf.value,
+        dataNascimento: dataNascimento.value,
+        tipoSangue: tipoSangue.value,
+        comentarios: comentarios.value,
+      };
     };
 
     return {
