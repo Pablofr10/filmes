@@ -18,6 +18,11 @@ const routes = [
     component: lazyLoad("Sobre"),
   },
   {
+    path: "/alunos",
+    name: "Alunos",
+    component: lazyLoad("Alunos"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: lazyLoad("NotFound"),

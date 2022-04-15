@@ -3,8 +3,9 @@
     <div class="container">
       <div class="logo"><Logo /></div>
       <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/sobre">Sobre</router-link></li>
+        <li v-for="rota in rotas" :key="rota.id">
+          <router-link :to="rota.path">{{ rota.nome }}</router-link>
+        </li>
       </ul>
     </div>
   </nav>
@@ -15,7 +16,14 @@
 import Logo from "../components/Logo.vue";
 export default {
   setup() {
-    return {};
+    const rotas = [
+      { id: 1, nome: "Home", path: "/" },
+      { id: 2, nome: "Sobre", path: "/sobre" },
+      { id: 3, nome: "Alunos", path: "/alunos" },
+    ];
+    return {
+      rotas,
+    };
   },
   components: { Logo },
 };

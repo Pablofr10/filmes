@@ -1,5 +1,5 @@
 <template>
-  <component :is="layout">
+  <component :is="layout" id="app">
     <router-view></router-view>
   </component>
 </template>
