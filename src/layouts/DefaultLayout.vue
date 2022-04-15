@@ -1,15 +1,17 @@
 <template>
-  <nav>
-    <div class="container">
-      <div class="logo"><Logo /></div>
-      <ul>
-        <li v-for="rota in rotas" :key="rota.id">
-          <router-link :to="rota.path">{{ rota.nome }}</router-link>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <slot></slot>
+  <div>
+    <nav>
+      <div class="container">
+        <div class="logo"><Logo /></div>
+        <ul>
+          <li v-for="rota in rotas" :key="rota.id">
+            <router-link :to="rota.path">{{ rota.nome }}</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <slot></slot>
+  </div>
 </template>
 
 <script>

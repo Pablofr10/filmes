@@ -6,9 +6,9 @@
       :placeholder="placeholder"
       :id="id"
       class="input"
-      @input="$emit('value', model)"
+      v-model="model"
+      @input="this.$emit('value', model)"
     />
-    {{ model }}
   </div>
 </template>
 
@@ -16,8 +16,10 @@
 import { ref } from "vue";
 export default {
   props: ["nome", "id", "textLabel", "type", "placeholder"],
-  setup(props) {
+  emits: ["value"],
+  setup() {
     const model = ref("");
+
     return { model };
   },
 };

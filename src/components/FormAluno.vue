@@ -1,23 +1,23 @@
 <template>
   <div>
     <div class="cadastro container">
-      <form class="form">
+      <form class="form" @submit.prevent="enviarCadastro()">
         <FormInput
           id="nome"
           nome="Nome"
           placeholder="Digite seu Nome"
           textLabel="Nome"
           type="text"
-          :value="nome"
           @value="nome = $event"
         />
-        {{ nome }}
+
         <FormInput
           id="cpf"
           nome="CPF"
           placeholder="000.000.000-00"
           textLabel="CPF"
           type="text"
+          @value="cpf = $event"
         />
         <FormInput
           id="dataNascimento"
@@ -25,6 +25,7 @@
           placeholder="00/00/0000"
           textLabel="Data Nascimento"
           type="text"
+          @value="dataNascimento = $event"
         />
         <div class="form-group">
           <label for="cpf">Tipo Sangue Pai</label>
@@ -47,7 +48,7 @@
             class="input"
           />
         </div>
-        <button class="btn btn-success">Enviar Cadastro</button>
+        <button type="submit" class="btn btn-success">Enviar Cadastro</button>
       </form>
     </div>
   </div>
@@ -71,9 +72,16 @@ export default {
       tipoSangue: "",
       comentarios: "",
     });
+    const form = toRefs(formulario);
+
+    const enviarCadastro = () => {
+      console.log(form.nome.value);
+    };
+
     return {
       sangues,
-      ...toRefs(formulario),
+      ...form,
+      enviarCadastro,
     };
   },
   components: { FormInput },
